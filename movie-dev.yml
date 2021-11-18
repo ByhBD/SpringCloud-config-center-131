@@ -1,0 +1,21 @@
+#声明电影微服务模块的端口号
+server:
+  port: 8001
+
+#声明电影微服务的名称
+spring:
+  application:
+    name: microservice-movie
+
+#微服务的消费方需要注册到Eureka服务器上
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://192.168.48.1:8888/eureka
+
+    #微服务消费方的管理
+    #与Eureka服务器的约定
+    #获取Eureka服务器上最新信息的时间间隔，默认是30秒
+    registry-fetch-interval-seconds: 10
